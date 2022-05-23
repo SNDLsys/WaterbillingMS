@@ -25,7 +25,8 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                WBMS    
+                <!--{{ config('app.name', 'Laravel') }}-->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -34,6 +35,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        <a href="/" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Create new user</a>
+                        <a href="/echo/addbills" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Add Bills</a>
+                        <a href="/index/create" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Add Customer</a>
+                        <a href="/show/invoice" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Invoice</a>
+                        <a href="/" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Show Customer list</a>
 
                     </ul>
 
@@ -79,6 +85,11 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <footer class="card-footer " text-align:center; >
+            Copyright 2022 Crabapple
+    </footer>
     </div>
+    
 </body>
+
 </html>

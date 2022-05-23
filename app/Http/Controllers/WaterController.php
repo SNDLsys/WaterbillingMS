@@ -27,6 +27,25 @@ class WaterController extends Controller
 
     }
 
+    //show db customer
+    public function indexcus(){
+
+        //$index = Water::all();
+       // $index = Water::orderBy('cusFirstname')->get();
+       //$index = Water::where('connection status', 'Active')->get();
+       //$index = Water::latest()->get();      
+
+        /*return view('waterbilling.showcus',[
+            'id' => $index,
+        ]);*/
+        $select = \App\Models\water::where('customer', '1')->first();
+        //$select = water::select('select * from customer');
+        //$select = water::SELECT ('select * FROM customer');
+        return view ('waterbilling.showcus', compact('select'));
+        
+
+    }
+
     public function show($id){
         //get the id in the parameter
         //use th $id variable to query the db for a record
@@ -40,6 +59,24 @@ class WaterController extends Controller
         return view('waterbilling.create');
     }
 
+    public function create1(){
+        
+        return view('waterbilling.invoice');
+    }
+
+    /*public function storebills(){
+        
+        return view('waterbilling.addbills');
+    }/
+
+    // register
+    /*public function regis(){
+        return view('waterbilling.adduser');
+        
+    }*/
+
+
+    //storing new customer
     public function store(){
         //error_log(request('surname'));
         $storeVar = new Water();
@@ -57,6 +94,27 @@ class WaterController extends Controller
 
         return redirect('/')->with('mssg', 'thanks for your order');
     }
+
+    /*public function storebills(){
+        
+        $storebill = new Water();
+
+        $storebill->meter_num = request('meternum');
+        $storebill->period_from = request('periodFrom');
+        $storebill->period_to = request('periodTo');
+        $storebill->prev_reading = request('preReading');
+        $storebill->present_reading = request('presentReading');
+        $storebill->bill_amount = request('billAmount');
+        $storebill->bill_date = request('billDate');
+        $storebill->due = request('dueDate');
+        $storebill->penalty = request('penalty');
+
+        //error_log($storeVar);
+        $storebill->save();
+
+
+        return redirect('/index');
+    }*/
 
     public function destroy($id){
         $waterid = Water::findOrFail($id);

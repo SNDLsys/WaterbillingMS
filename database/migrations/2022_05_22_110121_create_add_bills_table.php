@@ -13,21 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('customer', function (Blueprint $table) {
-            $table->id('cusId');
+        Schema::create('add_bills', function (Blueprint $table) {
+            $table->id('addBillsId');
             $table->timestamps();
-            $table->string('cusLastname');
-            $table->string('cusFirstname');
-            $table->string('cusMiddlename');
-            $table->string('contact');
-            $table->string('address');
-            $table->string('connection_status');
-        });
-
-        /*Schema::create('addingbill', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('meter_num');
             $table->string('period_from');
             $table->string('period_to');
             $table->string('prev_reading');
@@ -35,9 +23,10 @@ return new class extends Migration
             $table->string('bill_amount');
             $table->string('bill_date');
             $table->string('due');
-            $table->string('penalty');
+            $table->string('status');
 
-        });*/
+            
+        });
     }
 
     /**
@@ -47,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customer');
+        Schema::dropIfExists('add_bills');
     }
 };

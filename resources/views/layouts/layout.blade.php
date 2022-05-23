@@ -10,14 +10,13 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
        <!-- connect to main.css -->
+        <!-- connect to main.css -->
        <link href="/css/main.css" rel="stylesheet">
     </head>
     <body class="antialiased">
         @yield('content')
             
         <div></div>
-        <footer>
-            Copyright 2022 Crabapple
-        </footer>
+        
     </body>
 </html>
